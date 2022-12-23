@@ -20,3 +20,5 @@ public class Product {
     public int price;
     public int stock;
 }
+
+// 1-1 도메인 만들고 인터페이스 리포지토리를 만들어보자.
