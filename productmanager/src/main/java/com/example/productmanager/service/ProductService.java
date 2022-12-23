@@ -33,6 +33,8 @@ public class ProductService {
     public List<Product> findProducts() {
         return productRepository.findAll();
     }
+
+
     @Transactional
     public void update(Product product) {
         Product productToUpdate = productRepository.findByNo(product.getNo()).get(); // 식별만 함
@@ -47,5 +49,9 @@ public class ProductService {
 
     }
 
+    public Optional<Product> findOne(Integer productNo) {
+
+        return productRepository.findByNo(productNo);
+    }
 }
 

@@ -23,6 +23,7 @@ dependencies {
 	implementation 'mysql:mysql-connector-java:8.0.30'
 //	implementation'org.springframework.boot:spring-boot-starter-data-jdbc:3.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'

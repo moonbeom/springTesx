@@ -58,13 +58,28 @@ public class ProductController {
     // url에 있는 no
     // form(client가 작성한 데이터) 를 이용하러임
 
+// 문범띠
+//    @GetMapping("/products/edit/{no}")
+//    public String updateForm(@PathVariable("no") Integer no, @ModelAttribute("product") Product product) {
+//
+////        model.addAttribute("no", no);
+//
+//        return "products/productUpdateForm";
+//    }
 
+    // 김진욱
     @GetMapping("/products/edit/{no}")
-    public String updateForm(@PathVariable("no") Integer no, @ModelAttribute("product") Product product) {
-//        model.addAttribute("no", no);
+    public String updateForm(@PathVariable("no") Integer no, Model model) {
+
+        Product product = productService.findOne(no).get();
+        model.addAttribute("product", product);
 
         return "products/productUpdateForm";
     }
+
+
+
+
     // 전체적인 로직에 대한 작동 순서
 
     // 클라이언트로 부터 요청(url)로 들어온다

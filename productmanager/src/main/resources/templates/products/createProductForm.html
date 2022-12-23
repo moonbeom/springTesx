@@ -1,21 +1,41 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <body>
-<div class="container">
-  <form action="/products/new" method="post">
-    <div class="form-group">
-      <label for="name">상품</label>
-      <input type="text" id="name" name="name" placeholder="상품을
-입력하세요">
-      <label for="name">가격</label>
-      <input type="text" id="price" name="price" placeholder="가격을
-입력하세요">
-      <label for="name">재고</label>
-      <input type="text" id="stock" name="stock" placeholder="재고 수를
-입력하세요">
+<div class="container" style="max-width: 600px">
+<div class="py-3 text-center">
+    <h2>상품 등록</h2>
+</div>
+<form action="/products/new" method="post">
+    <div class="row mb-3">
+        <label th:for="name">상품명</label>
+        <input type="text" name="name" placeholder="상품을 입력하세요"/>
     </div>
-    <button type="submit">등록</button>
-  </form>
+    <div class="row mb-3">
+        <label th:for="name">가격</label>
+        <input type="number" name="price" placeholder="가격을 입력하세요"/>
+    </div>
+    <div class="row mb-3">
+        <label th:for="name">재고</label>
+        <input type="number" name="stock" placeholder="재고 수를 입력하세요"/>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-outline-primary btn-lg"
+                    onclick="location.href='/'"
+                    type="submit">등록
+            </button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-outline-dark btn-lg"
+                    onclick="location.href='/'" type="button">취소
+            </button>
+        </div>
+</form>
+</div>
 </div> <!-- /container -->
 </body>
 </html>

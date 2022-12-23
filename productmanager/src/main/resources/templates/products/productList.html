@@ -1,12 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
 <body>
-<div class="container">
-  <div>
-    <table>
+<div class="container" style="max-width: 600px">
+  <div class="py-3 text-center">
+    <h2>상품 목록</h2>
+    </div>
+    <table class="table">
       <thead>
       <tr>
-        <th>#</th>
+        <th>상품번호</th>
         <th>상품명</th>
         <th>가격</th>
         <th>재고수량</th>
@@ -19,13 +25,14 @@
         <td th:text="${product.price}"></td>
         <td th:text="${product.stock}"></td>
         <td>
-          <a href="#" th:href="@{/products/edit/{no}/ (no=${product.no})}" role="button">수정</a>
+          <a class="link-primary" href="#" th:href="@{/products/edit/{no}/ (no=${product.no})}">수정</a>
         </td>
         <td>
-          <a href="#" th:href="@{/products/{no}/delete (no=${product.no})}" role="button">삭제</a>
+          <a class="link-primary" href="#" th:href="@{/products/{no}/delete (no=${product.no})}">삭제</a>
         </td>
       </tr>
       </tbody>
+
     </table>
   </div>
 </div> <!-- /container -->
