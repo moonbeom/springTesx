@@ -15,11 +15,11 @@ import javax.persistence.Id;
 //@Builder
 public class Product {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int no;
     public String name;
     public int price;
-    public int stock;
+    public int stock; // HTTP는 HTML 문서와 같은 리소스들을 가져올 수 있도록 해주는 프로토콜
 }
 
 // 1-1 도메인 만들고 인터페이스 리포지토리를 만들어보자.

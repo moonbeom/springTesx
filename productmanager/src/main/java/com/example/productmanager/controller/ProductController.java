@@ -28,6 +28,16 @@ public class ProductController {
         this.springDataRepository = springDataRepository;
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
+
+    @GetMapping("/api")
+    public String restPage() {
+        return "api/apiPage";
+    }
+
     // create form 으로 연결 get 조회 post 등록
     @GetMapping("/products/new")
     public String createForm() {
@@ -68,7 +78,7 @@ public class ProductController {
 //    }
 
     // 김진욱
-    @GetMapping("/products/edit/{no}")
+    @GetMapping("/products/edit/{no}") // {} 이거 PathVariable
     public String updateForm(@PathVariable("no") Integer no, Model model) {
 
         Product product = productService.findOne(no).get();
